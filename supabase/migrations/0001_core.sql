@@ -239,7 +239,7 @@ alter table public.shipments enable row level security;
 alter table public.webhook_events enable row level security;
 alter table public.audit_logs enable row level security;
 
-create policy "published categories are readable" on public.product_categories for select using (exists(select 1 from public.products p where p.category_id = id and p.status = 'published') or public.is_admin());
+create policy "published categories are readable" on public.product_categories for select using (exists(select 1 from public.products p where p.category_id = product_categories.id and p.status = 'published') or public.is_admin());
 create policy "published products are readable" on public.products for select using (status = 'published' or public.is_admin());
 create policy "published product images are readable" on public.product_images for select using (exists(select 1 from public.products p where p.id = product_id and p.status = 'published') or public.is_admin());
 create policy "published variants are readable" on public.product_variants for select using (exists(select 1 from public.products p where p.id = product_id and p.status = 'published') or public.is_admin());
