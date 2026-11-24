@@ -1,28 +1,60 @@
-import { ArrowDownRight, ArrowRight, Check, ChevronDown, Globe2, Heart, Menu, Search, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowRight, ShoppingBag, Sparkles } from "lucide-react";
 
 const products = [
-  { name: "Arc Desk Lamp", category: "Workspace", price: "$48.00", old: "$62.00", tag: "Bestseller", color: "#e5e3d8", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85" },
-  { name: "Everyday Carry Tote", category: "On the go", price: "$32.00", tag: "New", color: "#e9dfd2", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85" },
-  { name: "Stoneware Pour Set", category: "Kitchen", price: "$56.00", color: "#dfe5dc", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" },
-  { name: "Cloud Knit Throw", category: "Living", price: "$74.00", color: "#e8e3eb", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" },
+  { name: "Arc Desk Lamp", category: "Workspace", price: "$48.00", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85" },
+  { name: "Everyday Carry Tote", category: "On the go", price: "$32.00", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85" },
+  { name: "Stoneware Pour Set", category: "Kitchen", price: "$56.00", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" },
+  { name: "Cloud Knit Throw", category: "Living", price: "$74.00", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" },
 ];
 
 export default function Home() {
-  return <main className="min-h-screen overflow-hidden">
-    <div className="flex min-h-9 items-center justify-center gap-2 bg-[#1d3f33] px-4 text-center text-[11px] font-medium tracking-[.12em] text-white sm:text-xs"><Sparkles size={13} /> A LITTLE MORE THOUGHTFUL, EVERY DAY <span className="hidden sm:inline">—</span><span className="hidden sm:inline underline underline-offset-4">Explore the edit</span></div>
-    <header className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 md:px-10">
-      <nav className="hidden items-center gap-7 text-sm text-[#53635b] md:flex"><a href="#shop">Shop all</a><a href="#collections">Collections</a><a href="#story">Our approach</a></nav>
-      <button aria-label="Open menu" className="md:hidden"><Menu size={22}/></button>
-      <a href="#" className="text-xl font-semibold tracking-[-.07em] md:absolute md:left-1/2 md:-translate-x-1/2">field<span className="text-[#78917f]">&</span>form<span className="ml-1 text-[10px] align-top tracking-normal">®</span></a>
-      <div className="flex items-center gap-4 text-sm"><button aria-label="Search"><Search size={19}/></button><button aria-label="Wishlist" className="hidden sm:block"><Heart size={19}/></button><button aria-label="Shopping bag" className="flex items-center gap-2"><ShoppingBag size={19}/><span className="hidden sm:inline">Bag (0)</span></button></div>
-    </header>
-    <section className="mx-auto grid max-w-[1440px] gap-8 px-5 pb-14 md:grid-cols-[.88fr_1.12fr] md:items-center md:px-10 md:pb-24">
-      <div className="relative z-10 py-8 md:py-16"><div className="mb-6 flex items-center gap-2 text-[11px] font-semibold tracking-[.18em] text-[#6b7e70]"><span className="h-px w-7 bg-[#91a38f]"/> THE EVERYDAY EDITION</div><h1 className="max-w-xl text-[clamp(3.2rem,7vw,6.5rem)] leading-[.92] tracking-[-.075em]">Make room<br/>for <em className="font-normal text-[#78917f]">better</em><br/>everyday.</h1><p className="mt-7 max-w-sm text-base leading-7 text-[#65736c]">Useful things, beautifully considered. Discover thoughtful essentials that bring a little more ease to your everyday rituals.</p><div className="mt-8 flex flex-wrap items-center gap-4"><a href="#shop" className="group inline-flex items-center gap-5 rounded-full bg-[#285b48] px-6 py-4 text-sm font-medium text-white transition hover:bg-[#1d3f33]">Explore the collection <ArrowRight size={17} className="transition group-hover:translate-x-1"/></a><span className="text-xs text-[#7b8981]">Thoughtfully chosen. Made to last.</span></div><div className="mt-14 flex items-center gap-4"><div className="flex -space-x-2">{["#d6b8a2","#9cae9d","#e3d8c9"].map((c,i)=><span key={i} className="h-8 w-8 rounded-full border-2 border-[#f7f8f4]" style={{background:c}}/>)}</div><div><div className="text-xs font-semibold">Small details. Better days.</div><div className="mt-1 text-[11px] text-[#7b8981]">A considered collection for modern living</div></div></div></div>
-      <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#e5e8df] md:min-h-[610px]"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1500&q=90" alt="Warm, thoughtfully styled living space" className="absolute inset-0 h-full w-full object-cover"/><div className="absolute bottom-5 left-5 rounded-2xl bg-white/90 px-4 py-3 backdrop-blur md:bottom-8 md:left-8"><div className="text-[10px] font-semibold tracking-[.15em] text-[#718075]">THE SOFT RESET</div><div className="mt-1 text-sm font-medium">A calmer kind of everyday</div></div><span className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#d9f27a] text-[#285b48] md:right-8 md:top-8"><ArrowDownRight size={21}/></span></div>
-    </section>
-    <section className="border-y border-[#e6e9e2] bg-[#f0f2ec]"><div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-4 px-5 py-5 text-xs text-[#617168] sm:grid-cols-4 md:px-10"><div className="flex items-center gap-2"><Check size={15}/> Thoughtfully selected</div><div className="flex items-center gap-2"><Globe2 size={15}/> Worldwide delivery</div><div className="flex items-center gap-2"><Heart size={15}/> Everyday essentials</div><div className="flex items-center gap-2"><Sparkles size={15}/> A little less, but better</div></div></section>
-    <section id="shop" className="mx-auto max-w-[1440px] px-5 py-16 md:px-10 md:py-24"><div className="mb-8 flex items-end justify-between"><div><div className="mb-3 text-[11px] font-semibold tracking-[.18em] text-[#78917f]">THE CURRENT COLLECTION</div><h2 className="text-3xl tracking-[-.05em] md:text-5xl">Everyday, elevated.</h2></div><a href="#shop" className="hidden items-center gap-2 text-sm md:flex">Shop all <ArrowRight size={16}/></a></div><div className="mb-8 flex gap-2 overflow-x-auto pb-1 text-xs"><button className="rounded-full bg-[#285b48] px-5 py-3 text-white">All essentials</button>{["Workspace","On the go","Kitchen","Living"].map(x=><button key={x} className="whitespace-nowrap rounded-full border border-[#dce1d9] px-5 py-3 text-[#637168] transition hover:border-[#285b48]">{x}</button>)}</div><div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-x-6">{products.map((p,i)=><article key={p.name} className="group"><div className="relative mb-4 aspect-[4/5] overflow-hidden rounded-2xl" style={{background:p.color}}><img src={p.image} alt={p.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"/>{p.tag&&<span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-medium">{p.tag}</span>}<button aria-label={`Add ${p.name} to bag`} className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition hover:bg-[#d9f27a]"><ShoppingBag size={17}/></button></div><div className="text-[10px] uppercase tracking-[.13em] text-[#829087]">{p.category}</div><h3 className="mt-1 text-sm font-medium md:text-base">{p.name}</h3><div className="mt-2 flex gap-2 text-sm"><span>{p.price}</span>{p.old&&<span className="text-[#9aa39d] line-through">{p.old}</span>}</div></article>)}</div></div></section>
-    <section id="story" className="bg-[#e8ede5]"><div className="mx-auto grid max-w-[1440px] gap-8 px-5 py-16 md:grid-cols-2 md:items-center md:px-10 md:py-24"><div className="overflow-hidden rounded-[2rem]"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85" alt="Natural materials and considered home details" className="h-[320px] w-full object-cover md:h-[500px]"/></div><div className="max-w-lg md:pl-12"><div className="mb-4 text-[11px] font-semibold tracking-[.18em] text-[#78917f]">A MORE CONSIDERED WAY</div><h2 className="text-4xl leading-[1.05] tracking-[-.06em] md:text-6xl">Less noise.<br/><em className="font-normal text-[#78917f]">More meaning.</em></h2><p className="mt-6 leading-7 text-[#65736c]">We believe the things you reach for every day should feel a little more special. Our collection brings together practical pieces with thoughtful details, chosen to make everyday living feel easier and more intentional.</p><a href="#shop" className="mt-8 inline-flex items-center gap-3 border-b border-[#9aaa9d] pb-2 text-sm">Find your everyday favorites <ArrowRight size={16}/></a></div></div></section>
-    <footer className="bg-[#1d3f33] text-white"><div className="mx-auto max-w-[1440px] px-5 py-12 md:px-10 md:py-16"><div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]"><div><div className="text-2xl font-semibold tracking-[-.07em]">field<span className="text-[#a8c0a7]">&</span>form</div><p className="mt-4 max-w-xs text-sm leading-6 text-white/65">Thoughtful essentials for the everyday. A little more considered, a little less complicated.</p></div><div><div className="text-xs font-semibold tracking-[.15em]">GOOD TO KNOW</div><div className="mt-4 grid gap-3 text-sm text-white/65"><a href="#">Shipping & delivery</a><a href="#">Returns & exchanges</a><a href="#">Contact us</a><a href="#">FAQs</a></div></div><div><div className="text-xs font-semibold tracking-[.15em]">A NOTE FROM US</div><p className="mt-4 text-sm leading-6 text-white/65">Join the list for new finds, useful notes, and the occasional good thing.</p><form className="mt-4 flex border-b border-white/30 pb-3"><input aria-label="Email address" type="email" placeholder="Your email address" className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-white/45"/><button aria-label="Subscribe" type="button"><ArrowRight size={18}/></button></form></div></div><div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-white/15 pt-5 text-[11px] text-white/45"><span>© 2026 field&form. All rights reserved.</span><span>Privacy · Terms · Shipping</span></div></div></footer>
-  </main>;
+  return (
+    <main className="min-h-screen bg-[#f7f8f4] text-[#20372d]">
+      <div className="flex min-h-9 items-center justify-center gap-2 bg-[#1d3f33] px-4 text-center text-xs text-white">
+        <Sparkles size={14} /> Thoughtful finds for everyday living
+      </div>
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6">
+        <a href="#" className="text-2xl font-semibold tracking-tight">OctraStore</a>
+        <nav className="hidden gap-7 text-sm sm:flex">
+          <a href="#shop">Shop</a><a href="#about">About</a>
+        </nav>
+        <a href="#shop" className="flex items-center gap-2 text-sm"><ShoppingBag size={18} /> Shop now</a>
+      </header>
+      <section className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-8 md:grid-cols-2 md:items-center md:pb-24">
+        <div>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[.2em] text-[#78917f]">The everyday collection</p>
+          <h1 className="max-w-xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-7xl">Good finds.<br /><span className="text-[#78917f]">Better days.</span></h1>
+          <p className="mt-6 max-w-md leading-7 text-[#65736c]">Useful, thoughtfully chosen essentials to make everyday moments feel a little better.</p>
+          <a href="#shop" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#285b48] px-6 py-4 text-sm font-medium text-white">Explore the collection <ArrowRight size={17} /></a>
+        </div>
+        <div className="overflow-hidden rounded-[2rem] bg-[#e5e8df]">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1500&q=90" alt="Thoughtfully styled living space" className="h-[360px] w-full object-cover md:h-[520px]" />
+        </div>
+      </section>
+      <section id="shop" className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+        <div className="mb-8 flex items-end justify-between">
+          <div><p className="mb-3 text-xs font-semibold uppercase tracking-[.2em] text-[#78917f]">The current collection</p><h2 className="text-3xl tracking-tight md:text-5xl">Everyday, elevated.</h2></div>
+          <span className="text-sm text-[#65736c]">4 featured finds</span>
+        </div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          {products.map((product) => (
+            <article key={product.name}>
+              <div className="mb-4 aspect-[4/5] overflow-hidden rounded-2xl bg-[#e5e3d8]">
+                <img src={product.image} alt={product.name} className="h-full w-full object-cover transition duration-300 hover:scale-105" />
+              </div>
+              <p className="text-xs uppercase tracking-wider text-[#829087]">{product.category}</p>
+              <h3 className="mt-1 text-sm font-medium md:text-base">{product.name}</h3>
+              <p className="mt-2 text-sm">{product.price}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section id="about" className="bg-[#e8ede5] px-5 py-16 text-center md:py-20">
+        <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#78917f]">A more considered way</p>
+        <h2 className="mt-4 text-4xl tracking-tight md:text-6xl">Less noise. More meaning.</h2>
+        <p className="mx-auto mt-5 max-w-xl leading-7 text-[#65736c]">OctraStore brings together practical pieces with thoughtful details, chosen to make everyday living feel easier and more intentional.</p>
+      </section>
+      <footer className="bg-[#1d3f33] px-5 py-8 text-center text-sm text-white">© 2026 OctraStore. Thoughtful finds for everyday living.</footer>
+    </main>
+  );
 }
